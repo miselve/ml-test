@@ -1,0 +1,9 @@
+sudo apt update && sudo apt install libgomp1 python3-venv cron
+python3 -m venv jupyter-env
+
+/home/eficloud5/jupyter-env/bin/pip install pandas codecarbon==3.0.4 joblib lightgbm numpy scikit-learn psutil xgboost gcsfs catboost
+0 */6 * * * /home/eficloud5/jupyter-env/bin/python /home/eficloud5/exp1/script.py >> /home/eficloud5/exp1/cron.log 2>&1
+
+
+/home/admin/jupyter-env/bin/pip install pandas codecarbon==3.0.4 joblib lightgbm numpy scikit-learn psutil xgboost gcsfs catboost
+0 */6 * * * /home/admin/jupyter-env/bin/python /home/admin/exp1/script.py >> /home/admin/exp1/cron.log 2>&1
